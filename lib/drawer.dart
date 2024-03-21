@@ -1,12 +1,13 @@
-import 'package:asdfg/helpScreen.dart';
-import 'package:asdfg/menuItemClass.dart';
-import 'package:asdfg/paymentPage.dart';
-import 'package:asdfg/promoPage.dart';
-import 'package:asdfg/screens/main-screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_zoom_drawer/config.dart';
 import 'package:flutter_zoom_drawer/flutter_zoom_drawer.dart';
-import 'menu-screen.dart';
+
+import 'drawer-screens/helpScreen.dart';
+import 'drawer-screens/menu-screen.dart';
+import 'drawer-screens/menuItemClass.dart';
+import 'drawer-screens/paymentPage.dart';
+import 'drawer-screens/promoPage.dart';
+import 'navbar-screens/main-screen.dart';
 
 class MyDrawer extends StatefulWidget {
   const MyDrawer({Key? key}) : super(key: key);
@@ -50,14 +51,23 @@ class _MyDrawerState extends State<MyDrawer> {
   Widget getScreen() {
     switch (currentItem) {
       case MenuItems.home:
-        return MainScreen(home: true, key: UniqueKey(),);
+        return MainScreen(
+          home: true,
+          key: UniqueKey(),
+        );
+
       case MenuItems.promo:
         return PromoPage();
+
       case MenuItems.settings:
-        return MainScreen(setting: true, key: UniqueKey(),);
+        return MainScreen(
+          setting: true,
+          key: UniqueKey(),
+        );
+
       case MenuItems.help:
-      
         return HelpScreen();
+
       default:
         return PaymentPage();
     }

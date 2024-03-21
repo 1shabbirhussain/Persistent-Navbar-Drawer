@@ -1,7 +1,7 @@
 // ignore_for_file: file_names, prefer_const_constructors
 
-import 'package:asdfg/screens/profile-screen.dart';
-import 'package:asdfg/screens/setting-screen.dart';
+import 'package:asdfg/navbar-screens/profile-screen.dart';
+import 'package:asdfg/navbar-screens/setting-screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_zoom_drawer/config.dart';
 import 'package:flutter_zoom_drawer/flutter_zoom_drawer.dart';
@@ -24,7 +24,7 @@ class _MainScreenState extends State<MainScreen> {
   @override
   void initState() {
     super.initState();
-    if (widget.setting == true) {
+    if (widget.setting == true || widget.home == true) {
       goToSettingsTab();
     }
   }
