@@ -1,4 +1,5 @@
 import 'package:asdfg/drawer.dart';
+import 'package:asdfg/main-screen.dart';
 import 'package:asdfg/snackbar.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -19,7 +20,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       // home: GetxSnackBar(),
       // home: MainScreen(),
-      home: MyDrawer(),
+      home: MainScreen(),
       // home: Navbar(),
       // home: MyHomePage(),
     );

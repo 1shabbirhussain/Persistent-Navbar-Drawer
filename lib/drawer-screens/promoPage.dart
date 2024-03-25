@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_zoom_drawer/flutter_zoom_drawer.dart';
 
+import '../myDrawerWidget.dart';
+
 class PromoPage extends StatelessWidget {
   const PromoPage({Key? key}) : super(key: key);
 
@@ -10,11 +12,13 @@ class PromoPage extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: Colors.red,
         title: Text("Promo"),
-        leading: IconButton(
-          icon: Icon(Icons.menu),
-          onPressed: () => ZoomDrawer.of(context)!.toggle(),
-        ),
+        // leading: IconButton(
+        //   icon: Icon(Icons.menu),
+        //   onPressed: () => ZoomDrawer.of(context)!.toggle(),
+        // ),
       ),
+              drawer: NavigationDrawerWidget(),
+
     );
   }
 }

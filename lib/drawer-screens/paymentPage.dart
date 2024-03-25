@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_zoom_drawer/flutter_zoom_drawer.dart';
 
+import '../myDrawerWidget.dart';
+
 class PaymentPage extends StatelessWidget {
   const PaymentPage({ Key? key }) : super(key: key);
 
@@ -10,9 +12,11 @@ class PaymentPage extends StatelessWidget {
       
       appBar: AppBar(
         title:Text("Payemnt"),
-        leading: IconButton(icon: Icon(Icons.menu),onPressed: () => ZoomDrawer.of(context)!.toggle(),
-        ),
+        // leading: IconButton(icon: Icon(Icons.menu),onPressed: () => ZoomDrawer.of(context)!.toggle(),
+        // ),
       ),
+              drawer: NavigationDrawerWidget(),
+
       
     );
   }

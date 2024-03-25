@@ -4,10 +4,10 @@ import 'package:flutter_zoom_drawer/flutter_zoom_drawer.dart';
 
 import 'drawer-screens/helpScreen.dart';
 import 'drawer-screens/menu-screen.dart';
-import 'drawer-screens/menuItemClass.dart';
+
 import 'drawer-screens/paymentPage.dart';
 import 'drawer-screens/promoPage.dart';
-import 'navbar-screens/main-screen.dart';
+import 'main-screen.dart';
 
 class MyDrawer extends StatefulWidget {
   const MyDrawer({Key? key}) : super(key: key);
@@ -50,20 +50,20 @@ class _MyDrawerState extends State<MyDrawer> {
   // ===============ACTION ON MENU ITEMS OF DRAWER ========================
   Widget getScreen() {
     switch (currentItem) {
-      case MenuItems.home:
-        return MainScreen(
-          home: true,
-          key: UniqueKey(),
-        );
+      // case MenuItems.home:
+      //   return MainScreen(
+      //     home: true,
+      //     key: UniqueKey(),
+      //   );
 
       case MenuItems.promo:
         return PromoPage();
 
-      case MenuItems.settings:
-        return MainScreen(
-          setting: true,
-          key: UniqueKey(),
-        );
+      // case MenuItems.settings:
+      //   return MainScreen(
+      //     setting: true,
+      //     key: UniqueKey(),
+      //   );
 
       case MenuItems.help:
         return HelpScreen();
@@ -72,4 +72,12 @@ class _MyDrawerState extends State<MyDrawer> {
         return PaymentPage();
     }
   }
+}
+
+class MenuItem {
+  final String title;
+  final IconData icon;
+
+  const MenuItem(this.title, this.icon);
+  
 }

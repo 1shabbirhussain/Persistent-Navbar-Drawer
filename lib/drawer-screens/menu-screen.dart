@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'menuItemClass.dart';
+import '../drawer.dart';
 
 // THIS CLASS CONTAINS NAMES AND ICONS FOR CUSTOM WIDGET OF DRAWER
 class MenuItems {
@@ -32,29 +32,33 @@ class MenuScreen extends StatelessWidget {
             padding: const EdgeInsets.all(32.0),
             child: CircleAvatar(
               backgroundColor: Colors.amber,
-              radius:50.0 ,
+              radius: 50.0,
             ),
           ),
           Spacer(),
           ...MenuItems.all.map(buildMenuItem).toList(),
-Spacer(flex: 2,),
+          Spacer(
+            flex: 2,
+          ),
           Padding(
             padding: const EdgeInsets.all(32.0),
             child: Text("Extra Details and info etc"),
           )
-          
         ],
       )),
     );
   }
+
   // THIS IS CUSTOM WIDGET THAT LIST NAME OF SCREENS INSIDE DRAWER USING MenuItem CLASS AND ON TAP IS USED TO CHANGE TILE PROPERTIES ONLY
   Widget buildMenuItem(MenuItem item) => ListTile(
-    selected: currentItem == item,
-    selectedTileColor: Colors.black12,
-    selectedColor: Colors.white,
+        selected: currentItem == item,
+        selectedTileColor: Colors.black12,
+        selectedColor: Colors.white,
         minLeadingWidth: 20,
         leading: Icon(item.icon),
         title: Text(item.title),
-        onTap: () {onSelectedItem(item);},
+        onTap: () {
+          onSelectedItem(item);
+        },
       );
 }
